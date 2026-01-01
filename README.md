@@ -1,152 +1,152 @@
 # Portfolio Project
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+このプロジェクトは [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) で作成された [Next.js](https://nextjs.org) プロジェクトです。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+このプロジェクトは [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) を使用して、Vercel の新しいフォントファミリーである [Geist](https://vercel.com/font) を自動的に最適化して読み込みます。
 
-## Tech Stack
+## 技術スタック
 
-This project uses the following technologies:
+このプロジェクトでは以下の技術を使用しています：
 
-- **Framework**: [Next.js 16.1.1](https://nextjs.org/) with App Router
+- **フレームワーク**: [Next.js 16.1.1](https://nextjs.org/) with App Router
 - **React**: 19.2.3
 - **TypeScript**: ^5
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **スタイリング**: [Tailwind CSS 4](https://tailwindcss.com/)
 - **CMS**: [microCMS](https://microcms.io/) via `microcms-js-sdk`
-- **Data Fetching**: [SWR](https://swr.vercel.app/) for client-side data fetching
-- **Code Quality**:
-  - [Biome](https://biomejs.dev/) for linting and formatting
+- **データ取得**: [SWR](https://swr.vercel.app/) をクライアント側のデータ取得に使用
+- **コード品質**:
+  - [Biome](https://biomejs.dev/) をリンティングとフォーマットに使用
   - [ESLint](https://eslint.org/) with Next.js config
-- **Package Manager**: pnpm (recommended)
+- **パッケージマネージャー**: pnpm（推奨）
 
-## Getting Started
+## はじめに
 
-### Prerequisites
+### 前提条件
 
-- **Node.js**: 18 or higher
-- **Package Manager**: pnpm (recommended), npm, yarn, or bun
+- **Node.js**: 18 以上
+- **パッケージマネージャー**: pnpm（推奨）、npm、yarn、または bun
 
-### Installation
+### インストール
 
-#### Using pnpm (Recommended)
+#### pnpm を使用する場合（推奨）
 
 ```bash
-# Install dependencies
+# 依存関係をインストール
 pnpm install
 ```
 
-#### Manual Installation
+#### 手動インストール
 
-If you need to install Next.js and React manually:
+Next.js と React を手動でインストールする場合：
 
 ```bash
 pnpm i next@latest react@latest react-dom@latest
 ```
 
-### Development
+### 開発
 
-Run the development server:
+開発サーバーを起動します：
 
 ```bash
 pnpm dev
-# or
+# または
 npm run dev
-# or
+# または
 yarn dev
-# or
+# または
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いて結果を確認してください。
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+`src/app/page.tsx` を編集することでページの編集を開始できます。ファイルを編集すると、ページが自動的に更新されます。
 
-### Build
+### ビルド
 
-Build the application for production:
+本番環境用にアプリケーションをビルドします：
 
 ```bash
 pnpm build
 ```
 
-This creates an optimized production build in the `.next` folder.
+これにより、`.next` フォルダに最適化された本番ビルドが作成されます。
 
-### Production
+### 本番環境
 
-Start the production server:
+本番サーバーを起動します：
 
 ```bash
 pnpm start
 ```
 
-This starts the Next.js production server. Make sure to run `pnpm build` first.
+これにより Next.js の本番サーバーが起動します。先に `pnpm build` を実行してください。
 
-### Code Quality
+### コード品質
 
-#### Linting
+#### リンティング
 
-Check code for linting errors:
+コードのリンティングエラーをチェックします：
 
 ```bash
 pnpm lint
 ```
 
-This runs Biome to check for code quality issues in the `./src` directory.
+これにより、`./src` ディレクトリ内のコード品質の問題を Biome でチェックします。
 
-#### Formatting
+#### フォーマット
 
-Format code automatically:
+コードを自動的にフォーマットします：
 
 ```bash
 pnpm format
 ```
 
-This runs Biome formatter to automatically format code in the `./src` directory.
+これにより、`./src` ディレクトリ内のコードを Biome フォーマッターで自動的にフォーマットします。
 
-## Environment Variables
+## 環境変数
 
-This project requires environment variables for microCMS integration.
+このプロジェクトでは、microCMS との統合のために環境変数が必要です。
 
-### Required Variables
+### 必要な変数
 
-- `MICROCMS_SERVICE_DOMAIN`: Your microCMS service domain
-- `MICROCMS_API_KEY`: Your microCMS API key
+- `MICROCMS_SERVICE_DOMAIN`: microCMS のサービスドメイン
+- `MICROCMS_API_KEY`: microCMS の API キー
 
-### Development
+### 開発環境
 
-Create a `.env.local` file in the root directory:
+ルートディレクトリに `.env.local` ファイルを作成します：
 
 ```env
 MICROCMS_SERVICE_DOMAIN=your-service-domain
 MICROCMS_API_KEY=your-api-key
 ```
 
-The `.env.local` file is automatically loaded by Next.js and is ignored by git.
+`.env.local` ファイルは Next.js によって自動的に読み込まれ、git では無視されます。
 
-### Production
+### 本番環境
 
 #### Vercel
 
-1. Go to your project settings on [Vercel Dashboard](https://vercel.com/dashboard)
-2. Navigate to **Settings** → **Environment Variables**
-3. Add the following environment variables:
-   - `MICROCMS_SERVICE_DOMAIN`: Your microCMS service domain
-   - `MICROCMS_API_KEY`: Your microCMS API key
-4. Select the environments (Production, Preview, Development) where these variables should be available
-5. Redeploy your application for the changes to take effect
+1. [Vercel Dashboard](https://vercel.com/dashboard) でプロジェクト設定に移動します
+2. **Settings** → **Environment Variables** に移動します
+3. 以下の環境変数を追加します：
+   - `MICROCMS_SERVICE_DOMAIN`: microCMS のサービスドメイン
+   - `MICROCMS_API_KEY`: microCMS の API キー
+4. これらの変数を利用可能にする環境（Production、Preview、Development）を選択します
+5. 変更を反映するためにアプリケーションを再デプロイします
 
-#### Other Hosting Platforms
+#### その他のホスティングプラットフォーム
 
-- **AWS Amplify**: Use the Amplify Console → App settings → Environment variables
+- **AWS Amplify**: Amplify Console → App settings → Environment variables を使用
 - **Netlify**: Site settings → Environment variables
 - **Railway**: Project settings → Variables
-- **Docker/Server**: Set environment variables in your container/server configuration or use a `.env` file (never commit this file)
+- **Docker/Server**: コンテナ/サーバー設定で環境変数を設定するか、`.env` ファイルを使用（このファイルはコミットしないでください）
 
-> **Important**: Never commit `.env.local` or any file containing actual API keys to version control. These files are already included in `.gitignore`.
+> **重要**: `.env.local` や実際の API キーを含むファイルをバージョン管理にコミットしないでください。これらのファイルは既に `.gitignore` に含まれています。
 
-## Project Structure
+## プロジェクト構造
 
-This project follows the recommended directory structure for Next.js App Router, organized by features and concerns.
+このプロジェクトは、機能と関心事ごとに整理された Next.js App Router の推奨ディレクトリ構造に従っています。
 
 ```
 .
@@ -216,154 +216,154 @@ This project follows the recommended directory structure for Next.js App Router,
 └─ biome.json / eslint.config.mjs
 ```
 
-### Directory Roles
+### ディレクトリの役割
 
 #### `app/`
 
-The routing center for Next.js App Router. This directory contains:
+Next.js App Router のルーティングの中心です。このディレクトリには以下が含まれます：
 
-- **Route Groups**: Directories like `(public)` and `(admin)` wrapped in parentheses are Route Groups. They don't affect the URL structure but allow you to organize routes with different layouts.
-- **API Routes**: Files in `api/` directories create API endpoints. For example, `api/posts/route.ts` creates an endpoint at `/api/posts`.
-- **Special Files**:
-  - `layout.tsx`: Root layout component that wraps all pages
-  - `page.tsx`: Home page component
-  - `not-found.tsx`: Custom 404 page
-  - `error.tsx`: Error boundary component
-  - `globals.css`: Global styles
+- **Route Groups**: `(public)` や `(admin)` のように括弧で囲まれたディレクトリは Route Groups です。URL 構造には影響しませんが、異なるレイアウトでルートを整理できます。
+- **API Routes**: `api/` ディレクトリ内のファイルは API エンドポイントを作成します。例えば、`api/posts/route.ts` は `/api/posts` にエンドポイントを作成します。
+- **特別なファイル**:
+  - `layout.tsx`: すべてのページをラップするルートレイアウトコンポーネント
+  - `page.tsx`: ホームページコンポーネント
+  - `not-found.tsx`: カスタム 404 ページ
+  - `error.tsx`: エラーバウンダリーコンポーネント
+  - `globals.css`: グローバルスタイル
 
 #### `components/`
 
-Reusable UI components that are domain-independent. Organized by purpose:
+ドメイン非依存の再利用可能な UI コンポーネントです。目的別に整理されています：
 
-- **`ui/`**: Basic UI components like buttons, modals, inputs, etc.
-- **`layout/`**: Layout-related components like headers, footers, sidebars
-- **`common/`**: Common utility components like loading spinners, error messages
+- **`ui/`**: ボタン、モーダル、入力などの基本的な UI コンポーネント
+- **`layout/`**: ヘッダー、フッター、サイドバーなどのレイアウト関連コンポーネント
+- **`common/`**: ローディングスピナー、エラーメッセージなどの共通ユーティリティコンポーネント
 
-These components should not contain business logic specific to a particular feature.
+これらのコンポーネントには、特定の機能に固有のビジネスロジックを含めるべきではありません。
 
 #### `features/`
 
-Feature-based organization (domain-based architecture). Each feature is self-contained with:
+機能ベースの組織（ドメインベースのアーキテクチャ）です。各機能は自己完結型で、以下を含みます：
 
-- **`components/`**: Feature-specific components (e.g., `PostCard.tsx`)
-- **`hooks/`**: Feature-specific custom hooks (e.g., `usePosts.ts`)
-- **`services/`**: Feature-specific service functions (e.g., `postService.ts`)
-- **`api/`**: Server-side data fetching functions
-- **`types.ts`**: Feature-specific TypeScript types
+- **`components/`**: 機能固有のコンポーネント（例：`PostCard.tsx`）
+- **`hooks/`**: 機能固有のカスタムフック（例：`usePosts.ts`）
+- **`services/`**: 機能固有のサービス関数（例：`postService.ts`）
+- **`api/`**: サーバー側のデータ取得関数
+- **`types.ts`**: 機能固有の TypeScript 型
 
-Examples of features: `posts`, `auth`, `profile`, `hello`.
+機能の例：`posts`、`auth`、`profile`、`hello`。
 
-This structure scales well as the project grows and makes it easier to maintain and test features independently.
+この構造は、プロジェクトが成長しても拡張しやすく、機能を独立して保守・テストしやすくなります。
 
 #### `libs/`
 
-External services and shared logic that can be used across the application:
+アプリケーション全体で使用できる外部サービスと共有ロジック：
 
-- **`microcms.ts`**: microCMS client configuration and utilities
-- **`fetcher.ts`**: HTTP client utilities and fetch wrappers
-- **`constants.ts`**: Application-wide constants and configuration values
-- **`client.ts`**: microCMS client instance creation
+- **`microcms.ts`**: microCMS クライアント設定とユーティリティ
+- **`fetcher.ts`**: HTTP クライアントユーティリティと fetch ラッパー
+- **`constants.ts`**: アプリケーション全体の定数と設定値
+- **`client.ts`**: microCMS クライアントインスタンスの作成
 
-These are infrastructure-level utilities that don't belong to any specific feature.
+これらは特定の機能に属さないインフラストラクチャレベルのユーティリティです。
 
 #### `hooks/`
 
-Reusable custom React hooks that can be used across multiple features:
+複数の機能で使用できる再利用可能なカスタム React フック：
 
-- **`useMediaQuery.ts`**: Hook for responsive design breakpoints
-- Other utility hooks that are not feature-specific
+- **`useMediaQuery.ts`**: レスポンシブデザインのブレークポイント用のフック
+- 機能固有でないその他のユーティリティフック
 
 #### `types/`
 
-Global TypeScript type definitions that are used across multiple features or throughout the application. This is different from feature-specific types which should live in `features/{feature}/types.ts`.
+複数の機能またはアプリケーション全体で使用されるグローバルな TypeScript 型定義です。これは、`features/{feature}/types.ts` に配置すべき機能固有の型とは異なります。
 
 #### `public/`
 
-Static files served directly by Next.js:
+Next.js によって直接提供される静的ファイル：
 
-- **`images/`**: Image assets
-- **`icons/`**: Icon files
-- Other static assets like fonts, documents, etc.
+- **`images/`**: 画像アセット
+- **`icons/`**: アイコンファイル
+- フォント、ドキュメントなどのその他の静的アセット
 
-Files in this directory are accessible at the root URL (e.g., `/images/logo.png`).
+このディレクトリ内のファイルは、ルート URL でアクセス可能です（例：`/images/logo.png`）。
 
-#### Configuration Files
+#### 設定ファイル
 
-- **`next.config.ts`**: Next.js configuration
-- **`tsconfig.json`**: TypeScript configuration
-- **`biome.json`**: Biome linter and formatter configuration
-- **`eslint.config.mjs`**: ESLint configuration
-- **`package.json`**: Project dependencies and scripts
-- **`.env.local`**: Local environment variables (not committed to git)
+- **`next.config.ts`**: Next.js の設定
+- **`tsconfig.json`**: TypeScript の設定
+- **`biome.json`**: Biome リターとフォーマッターの設定
+- **`eslint.config.mjs`**: ESLint の設定
+- **`package.json`**: プロジェクトの依存関係とスクリプト
+- **`.env.local`**: ローカル環境変数（git にはコミットされません）
 
-## Architecture Notes
+## アーキテクチャの注意事項
 
-### microCMS Integration
+### microCMS 統合
 
-This project uses microCMS as a headless CMS. Important architectural decisions:
+このプロジェクトは microCMS をヘッドレス CMS として使用しています。重要なアーキテクチャ上の決定：
 
-- **Server Components**: Use `getHello()` or similar functions directly in Server Components to fetch data from microCMS
-- **Client Components**: Never use `microcms-js-sdk` directly in Client Components. Instead, use API routes (`/api/*`) to fetch data
-- **API Routes**: Create API routes in `app/api/` to expose microCMS data to client components securely
-- **Environment Variables**: microCMS credentials are stored in environment variables and only accessed on the server side
+- **Server Components**: Server Components で `getHello()` または類似の関数を直接使用して microCMS からデータを取得します
+- **Client Components**: Client Components で `microcms-js-sdk` を直接使用しないでください。代わりに、API ルート（`/api/*`）を使用してデータを取得します
+- **API Routes**: `app/api/` に API ルートを作成して、microCMS データをクライアントコンポーネントに安全に公開します
+- **Environment Variables**: microCMS の認証情報は環境変数に保存され、サーバー側でのみアクセスされます
 
-See `docs/hello-feature.md` for a detailed example of how to implement features with microCMS.
+microCMS を使用した機能の実装例の詳細については、`docs/hello-feature.md` を参照してください。
 
-### Data Fetching
+### データ取得
 
-- **Server Components**: Fetch data directly using async/await in Server Components
-- **Client Components**: Use SWR for client-side data fetching with caching and revalidation
-- **API Routes**: Create RESTful endpoints in `app/api/` for client-side data access
+- **Server Components**: Server Components で async/await を直接使用してデータを取得します
+- **Client Components**: キャッシュと再検証を備えたクライアント側のデータ取得に SWR を使用します
+- **API Routes**: クライアント側のデータアクセス用に `app/api/` に RESTful エンドポイントを作成します
 
-## Deployment
+## デプロイ
 
 ### Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js アプリをデプロイする最も簡単な方法は、Next.js の作成者による [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) を使用することです。
 
-**Steps:**
+**手順：**
 
-1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
-2. Import your repository on [Vercel](https://vercel.com/new)
-3. Configure environment variables in the Vercel dashboard
-4. Deploy
+1. コードを Git リポジトリ（GitHub、GitLab、または Bitbucket）にプッシュします
+2. [Vercel](https://vercel.com/new) でリポジトリをインポートします
+3. Vercel ダッシュボードで環境変数を設定します
+4. デプロイします
 
-Vercel will automatically:
+Vercel は自動的に以下を実行します：
 
-- Detect Next.js and configure build settings
-- Run `pnpm build` (or equivalent) during deployment
-- Optimize your application for production
-- Provide preview deployments for pull requests
+- Next.js を検出してビルド設定を構成します
+- デプロイ中に `pnpm build`（または同等のコマンド）を実行します
+- アプリケーションを本番環境用に最適化します
+- プルリクエストのプレビューデプロイを提供します
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+詳細については、[Next.js デプロイメントドキュメント](https://nextjs.org/docs/app/building-your-application/deploying) を確認してください。
 
-### Other Platforms
+### その他のプラットフォーム
 
-Next.js can be deployed to various platforms:
+Next.js はさまざまなプラットフォームにデプロイできます：
 
-- **AWS Amplify**: Full-stack deployment with CI/CD
-- **Netlify**: Similar to Vercel, with automatic deployments
-- **Railway**: Simple deployment with environment variable management
-- **Docker**: Containerize your app and deploy anywhere
-- **Self-hosted**: Run `pnpm build && pnpm start` on your own server
+- **AWS Amplify**: CI/CD を備えたフルスタックデプロイ
+- **Netlify**: Vercel と同様で、自動デプロイを備えています
+- **Railway**: 環境変数管理を備えたシンプルなデプロイ
+- **Docker**: アプリをコンテナ化してどこにでもデプロイ
+- **セルフホスティング**: 独自のサーバーで `pnpm build && pnpm start` を実行
 
-## Learn More
+## 詳細情報
 
-To learn more about Next.js, take a look at the following resources:
+Next.js の詳細については、以下のリソースを参照してください：
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial
-- [Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js ドキュメント](https://nextjs.org/docs) - Next.js の機能と API について学ぶ
+- [Learn Next.js](https://nextjs.org/learn) - インタラクティブな Next.js チュートリアル
+- [Next.js GitHub リポジトリ](https://github.com/vercel/next.js) - フィードバックと貢献を歓迎します！
 
-### Additional Resources
+### 追加リソース
 
-- [Next.js App Router Documentation](https://nextjs.org/docs/app) - comprehensive guide to the App Router
-- [React Server Components](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components) - learn about Server Components
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - utility-first CSS framework
-- [microCMS Documentation](https://document.microcms.io/) - headless CMS documentation
-- [SWR Documentation](https://swr.vercel.app/) - data fetching library
-- [Biome Documentation](https://biomejs.dev/) - fast formatter and linter
+- [Next.js App Router ドキュメント](https://nextjs.org/docs/app) - App Router の包括的なガイド
+- [React Server Components](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components) - Server Components について学ぶ
+- [Tailwind CSS ドキュメント](https://tailwindcss.com/docs) - ユーティリティファーストの CSS フレームワーク
+- [microCMS ドキュメント](https://document.microcms.io/) - ヘッドレス CMS ドキュメント
+- [SWR ドキュメント](https://swr.vercel.app/) - データ取得ライブラリ
+- [Biome ドキュメント](https://biomejs.dev/) - 高速なフォーマッターとリター
 
-## References
+## 参考資料
 
-- [推奨ディレクトリ構成（Next.js App Router）](https://zenn.dev/yodaka/articles/eca2d4bf552aeb) - Recommended directory structure for Next.js App Router (Japanese)
+- [推奨ディレクトリ構成（Next.js App Router）](https://zenn.dev/yodaka/articles/eca2d4bf552aeb) - Next.js App Router の推奨ディレクトリ構造
