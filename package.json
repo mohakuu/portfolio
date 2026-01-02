@@ -10,6 +10,9 @@
     "format": "biome format --write ./src"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "date-fns-tz": "^3.2.0",
+    "highlight.js": "^11.7.0",
     "microcms-js-sdk": "^3.2.0",
     "next": "16.1.1",
     "react": "19.2.3",
@@ -19,6 +22,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.10",
     "@tailwindcss/postcss": "^4",
+    "@types/cheerio": "^0.22.35",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
