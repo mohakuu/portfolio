@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import Nav from "@/components/layout/Nav";
 import { getTagList } from "@/features/blog/api/get-tags";
 import { LIMIT } from "@/libs/constants";

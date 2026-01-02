@@ -1,7 +1,7 @@
-import type { Tag } from "@/features/blog/types";
-import TagList from "@/features/blog/components/TagList";
-import SearchField from "@/components/ui/SearchField";
 import { Suspense } from "react";
+import SearchField from "@/components/ui/SearchField";
+import TagList from "@/features/blog/components/TagList";
+import type { Tag } from "@/features/blog/types";
 
 type Props = {
   tags: Tag[];

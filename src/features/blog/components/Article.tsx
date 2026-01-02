@@ -1,8 +1,8 @@
+import PublishedDate from "@/components/common/Date";
 import { formatRichText } from "@/libs/utils";
 import { type Article } from "../types";
-import PublishedDate from "@/components/common/Date";
-import TagList from "./TagList";
 import Profile from "./Profile";
+import TagList from "./TagList";
 
 type Props = {
   data: Article;

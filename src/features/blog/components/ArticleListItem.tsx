@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import PublishedDate from "@/components/common/Date";
 import { Article } from "../types";
 import TagList from "./TagList";
-import PublishedDate from "@/components/common/Date";
 
 type Props = {
   article: Article;

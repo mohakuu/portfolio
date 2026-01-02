@@ -1,9 +1,9 @@
 import { Metadata } from "next";
+import Pagination from "@/components/common/Pagination";
 import { getList } from "@/features/blog/api/get-articles";
 import { getTag } from "@/features/blog/api/get-tags";
-import { LIMIT } from "@/libs/constants";
-import Pagination from "@/components/common/Pagination";
 import ArticleList from "@/features/blog/components/ArticleList";
+import { LIMIT } from "@/libs/constants";
 
 type Props = {
   params: Promise<{

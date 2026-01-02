@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useCallback, useRef, useState } from "react";
 
 export default function SearchField() {
   const [composing, setComposition] = useState(false);

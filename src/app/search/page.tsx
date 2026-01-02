@@ -1,7 +1,7 @@
 import { Metadata } from "next";
+import Pagination from "@/components/common/Pagination";
 import { getList } from "@/features/blog/api/get-articles";
 import ArticleList from "@/features/blog/components/ArticleList";
-import Pagination from "@/components/common/Pagination";
 
 type Props = {
   searchParams: Promise<{

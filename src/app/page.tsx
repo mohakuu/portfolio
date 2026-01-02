@@ -1,7 +1,7 @@
-import { getList } from "@/features/blog/api/get-articles";
-import { LIMIT } from "@/libs/constants";
 import Pagination from "@/components/common/Pagination";
+import { getList } from "@/features/blog/api/get-articles";
 import ArticleList from "@/features/blog/components/ArticleList";
+import { LIMIT } from "@/libs/constants";
 
 export default async function Page() {
   const data = await getList({

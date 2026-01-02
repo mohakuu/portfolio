@@ -1,6 +1,6 @@
 import type { MicroCMSQueries } from "microcms-js-sdk";
-import { client } from "@/libs/client";
 import { notFound } from "next/navigation";
+import { client } from "@/libs/client";
 import type { Blog } from "../types";
 
 // ブログ一覧を取得

@@ -1,7 +1,7 @@
 import type {
-  MicroCMSImage,
-  MicroCMSDate,
   MicroCMSContentId,
+  MicroCMSDate,
+  MicroCMSImage,
 } from "microcms-js-sdk";
 
 // タグの型定義
