@@ -1,14 +1,18 @@
+import type { MicroCMSQueries } from "microcms-js-sdk";
 import PublishedDate from "@/components/common/Date";
 import { formatRichText } from "@/libs/utils";
-import { type Article } from "../types";
+import { getDetail } from "../api/get-articles";
 import Profile from "./Profile";
 import TagList from "./TagList";
 
 type Props = {
-  data: Article;
+  contentId: string;
+  queries?: MicroCMSQueries;
 };
 
-export default function Article({ data }: Props) {
+export default async function Article({ contentId, queries }: Props) {
+  const data = await getDetail(contentId, queries);
+
   return (
     <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
       <article>

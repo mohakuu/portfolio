@@ -14,7 +14,7 @@ export default function ArticleListItem({ article }: Props) {
       <Link href={`/articles/${article.id}`} className="block">
         <div className="sm:flex">
           {article.thumbnail ? (
-            <div className="relative h-48 w-full sm:h-auto sm:w-64 sm:flex-shrink-0">
+            <div className="relative h-48 w-full sm:h-auto sm:w-64 sm:shrink-0">
               <picture>
                 <source
                   type="image/webp"
@@ -35,7 +35,7 @@ export default function ArticleListItem({ article }: Props) {
               </picture>
             </div>
           ) : (
-            <div className="relative h-48 w-full sm:h-auto sm:w-64 sm:flex-shrink-0">
+            <div className="relative h-48 w-full sm:h-auto sm:w-64 sm:shrink-0">
               <Image
                 className="h-full w-full object-cover"
                 src="/no-image.png"
