@@ -1,6 +1,7 @@
 import type { MicroCMSQueries } from "microcms-js-sdk";
+import EmptyState from "@/components/common/EmptyState";
 import Pagination from "@/components/common/Pagination";
-import { LIMIT } from "@/libs/constants";
+import { LIMIT, MESSAGES } from "@/libs/constants";
 import { getList } from "../api/get-articles";
 import ArticleListItem from "./ArticleListItem";
 
@@ -25,11 +26,7 @@ export default async function ArticleList({
   });
 
   if (!data.contents || data.contents.length === 0) {
-    return (
-      <p className="py-12 text-center text-gray-600 dark:text-gray-400">
-        記事がありません。
-      </p>
-    );
+    return <EmptyState message={MESSAGES.EMPTY_ARTICLES} />;
   }
 
   return (

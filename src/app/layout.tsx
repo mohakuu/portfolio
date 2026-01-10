@@ -3,9 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import Nav from "@/components/layout/Nav";
-import { getTagList } from "@/features/blog/api/get-tags";
-import { LIMIT } from "@/libs/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,37 +17,35 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
   title: {
-    template: "%s | Simple Blog",
-    default: "Simple Blog",
+    template: "%s | Portfolio",
+    default: "Portfolio",
   },
-  description: "A simple blog presented by microCMS",
+  description:
+    "山梨出身のWebエンジニアのポートフォリオサイト。フロントエンドからバックエンドまで、幅広い技術スタックでWebアプリケーションの開発を行っています。",
   openGraph: {
     title: {
-      template: "%s | Simple Blog",
-      default: "Simple Blog",
+      template: "%s | Portfolio",
+      default: "Portfolio",
     },
-    description: "A simple blog presented by microCMS",
+    description:
+      "山梨出身のWebエンジニアのポートフォリオサイト。フロントエンドからバックエンドまで、幅広い技術スタックでWebアプリケーションの開発を行っています。",
   },
   alternates: {
     canonical: "/",
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const tags = await getTagList({
-    limit: LIMIT,
-  });
   return (
     <html lang="ja">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <Nav tags={tags.contents} />
         <main className="min-h-screen bg-white dark:bg-gray-900">
           {children}
         </main>
