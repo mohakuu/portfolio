@@ -1,6 +1,7 @@
-import { Suspense } from "react";
 import ArticleList from "@/features/blog/components/ArticleList";
-import SearchField from "@/components/ui/SearchField";
+import HeroSection from "@/components/common/HeroSection";
+import PageContainer from "@/components/common/PageContainer";
+import SearchFieldWithSuspense from "@/components/common/SearchFieldWithSuspense";
 
 export const metadata = {
   title: "Blog",
@@ -9,33 +10,14 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="bg-white dark:bg-gray-900">
-      <section className="border-b border-gray-200 dark:border-gray-800">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
-            Blog
-          </h1>
-          <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400 sm:text-xl">
-            ブログ記事一覧
-          </p>
-          <div className="mb-8">
-            <Suspense
-              fallback={
-                <input
-                  type="search"
-                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm text-gray-900 placeholder-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
-                  placeholder="Loading..."
-                  disabled
-                />
-              }
-            >
-              <SearchField />
-            </Suspense>
-          </div>
-          <ArticleList basePath="/blog" />
+    <PageContainer>
+      <HeroSection title="Blog" description="ブログ記事一覧">
+        <div className="mb-8">
+          <SearchFieldWithSuspense />
         </div>
-      </section>
-    </div>
+        <ArticleList basePath="/blog" />
+      </HeroSection>
+    </PageContainer>
   );
 }
 

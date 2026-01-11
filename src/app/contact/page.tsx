@@ -1,3 +1,7 @@
+import HeroSection from "@/components/common/HeroSection";
+import PageContainer from "@/components/common/PageContainer";
+import PageSection from "@/components/common/PageSection";
+
 export const metadata = {
   title: "Contact",
   description: "お問い合わせ",
@@ -5,18 +9,9 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-white dark:bg-gray-900">
-      <section className="border-b border-gray-200 dark:border-gray-800">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
-            Contact
-          </h1>
-          <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400 sm:text-xl">
-            お問い合わせ
-          </p>
-        </div>
-      </section>
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <PageContainer>
+      <HeroSection title="Contact" description="お問い合わせ" />
+      <PageSection>
         <div className="space-y-12">
 
           <div className="space-y-8">
@@ -51,8 +46,8 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </PageSection>
+    </PageContainer>
   );
 }
 

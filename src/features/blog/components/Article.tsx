@@ -1,5 +1,8 @@
 import type { MicroCMSQueries } from "microcms-js-sdk";
 import PublishedDate from "@/components/common/Date";
+import HeroSection from "@/components/common/HeroSection";
+import PageContainer from "@/components/common/PageContainer";
+import PageSection from "@/components/common/PageSection";
 import { formatRichText } from "@/libs/utils";
 import { getDetail } from "../api/get-articles";
 
@@ -12,21 +15,13 @@ export default async function Article({ contentId, queries }: Props) {
   const data = await getDetail(contentId, queries);
 
   return (
-    <div className="bg-white dark:bg-gray-900">
-      <section className="border-b border-gray-200 dark:border-gray-800">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
-            {data.title}
-          </h1>
-          <p className="mb-6 text-lg leading-relaxed text-gray-600 dark:text-gray-400 sm:text-xl">
-            {data.description}
-          </p>
-          <div className="flex items-center gap-4">
-            <PublishedDate date={data.publishedAt || data.createdAt} />
-          </div>
+    <PageContainer>
+      <HeroSection title={data.title} description={data.description}>
+        <div className="flex items-center gap-4">
+          <PublishedDate date={data.publishedAt || data.createdAt} />
         </div>
-      </section>
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      </HeroSection>
+      <PageSection>
         <article>
           {data.thumbnail && (
             <picture className="mb-8 block">
@@ -55,7 +50,7 @@ export default async function Article({ contentId, queries }: Props) {
             }}
           />
         </article>
-      </section>
-    </div>
+      </PageSection>
+    </PageContainer>
   );
 }

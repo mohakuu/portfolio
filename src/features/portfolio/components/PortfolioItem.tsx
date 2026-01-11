@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ImageWithFallback from "@/components/ui/ImageWithFallback";
-import TechStack from "@/components/ui/TechStack";
+import ImageWithFallback from "@/components/common/ImageWithFallback";
+import TechStack from "@/components/common/TechStack";
 import { MESSAGES } from "@/libs/constants";
 import type { Portfolio } from "../types";
 
