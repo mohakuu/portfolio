@@ -1,9 +1,10 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/common/HeroSection";
 import PageContainer from "@/components/common/PageContainer";
 import SearchFieldWithSuspense from "@/components/common/SearchFieldWithSuspense";
 import ArticleList from "@/features/blog/components/ArticleList";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blog",
   description: "ブログ記事一覧",
 };

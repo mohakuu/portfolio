@@ -1,8 +1,9 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/common/HeroSection";
 import PageContainer from "@/components/common/PageContainer";
 import PortfolioPreview from "@/features/portfolio/components/PortfolioPreview";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Home",
   description:
     "つくるものを通して人と人がつながり 新しい価値が生まれ、気持ちや想いが届く。 そんなお手伝いができればと考えています。",

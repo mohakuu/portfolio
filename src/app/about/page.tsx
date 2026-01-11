@@ -1,8 +1,9 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/common/HeroSection";
 import PageContainer from "@/components/common/PageContainer";
 import PageSection from "@/components/common/PageSection";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About",
   description: "自己紹介",
 };
