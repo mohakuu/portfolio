@@ -10,7 +10,7 @@ export default function SearchField() {
   const _onEnter: React.KeyboardEventHandler<HTMLInputElement> = useCallback(
     (e) => {
       if (e.code === "Enter" && !composing) {
-        location.href = `/search?q=${inputRef.current?.value}`;
+        location.href = `/blog/search?q=${inputRef.current?.value}`;
       }
     },
     [composing],

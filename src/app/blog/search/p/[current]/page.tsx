@@ -6,19 +6,24 @@ type Props = {
   params: Promise<{
     current: string;
   }>;
+  searchParams: Promise<{
+    q?: string;
+  }>;
 };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
+  const searchParams = await props.searchParams;
   return {
     alternates: {
-      canonical: `/p/${params.current}`,
+      canonical: `/blog/search/p/${params.current}?q=${searchParams.q}`,
     },
   };
 }
 
 export default async function Page(props: Props) {
   const params = await props.params;
+  const searchParams = await props.searchParams;
   const current = parseInt(params.current as string, 10);
 
   return (
@@ -26,9 +31,13 @@ export default async function Page(props: Props) {
       <ArticleList
         queries={{
           offset: LIMIT * (current - 1),
+          q: searchParams.q,
         }}
         current={current}
+        basePath="/blog/search"
+        q={searchParams.q}
       />
     </div>
   );
 }
+

@@ -17,7 +17,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       title: "「" + searchParams.q + "」の検索結果",
     },
     alternates: {
-      canonical: `/search?q=${searchParams.q}`,
+      canonical: `/blog/search?q=${searchParams.q}`,
     },
   };
 }
@@ -45,9 +45,10 @@ export default async function Page(props: Props) {
         queries={{
           q: searchParams.q,
         }}
-        basePath="/search"
+        basePath="/blog/search"
         q={searchParams.q}
       />
     </div>
   );
 }
+

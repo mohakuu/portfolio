@@ -1,13 +1,28 @@
+import { Metadata } from "next";
 import { Suspense } from "react";
 import ArticleList from "@/features/blog/components/ArticleList";
 import SearchField from "@/components/ui/SearchField";
+import { LIMIT } from "@/libs/constants";
 
-export const metadata = {
-  title: "Blog",
-  description: "ブログ記事一覧",
+type Props = {
+  params: Promise<{
+    current: string;
+  }>;
 };
 
-export default function BlogPage() {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
+  return {
+    alternates: {
+      canonical: `/blog/p/${params.current}`,
+    },
+  };
+}
+
+export default async function Page(props: Props) {
+  const params = await props.params;
+  const current = parseInt(params.current as string, 10);
+
   return (
     <div className="bg-white dark:bg-gray-900">
       <section className="border-b border-gray-200 dark:border-gray-800">
@@ -29,7 +44,13 @@ export default function BlogPage() {
               <SearchField />
             </Suspense>
           </div>
-          <ArticleList basePath="/blog" />
+          <ArticleList
+            queries={{
+              offset: LIMIT * (current - 1),
+            }}
+            current={current}
+            basePath="/blog"
+          />
         </div>
       </section>
     </div>
