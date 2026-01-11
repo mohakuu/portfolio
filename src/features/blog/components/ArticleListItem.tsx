@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import PublishedDate from "@/components/common/Date";
 import { Article } from "../types";
-import TagList from "./TagList";
 
 type Props = {
   article: Article;
@@ -52,8 +51,7 @@ export default function ArticleListItem({ article }: Props) {
             <p className="mb-4 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">
               {article.description}
             </p>
-            <div className="mt-auto space-y-3">
-              <TagList tags={article.tags} hasLink={false} />
+            <div className="mt-auto">
               <PublishedDate date={article.publishedAt || article.createdAt} />
             </div>
           </div>

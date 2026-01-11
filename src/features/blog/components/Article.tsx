@@ -2,8 +2,6 @@ import type { MicroCMSQueries } from "microcms-js-sdk";
 import PublishedDate from "@/components/common/Date";
 import { formatRichText } from "@/libs/utils";
 import { getDetail } from "../api/get-articles";
-import Profile from "./Profile";
-import TagList from "./TagList";
 
 type Props = {
   contentId: string;
@@ -19,35 +17,10 @@ export default async function Article({ contentId, queries }: Props) {
         <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
           {data.title}
         </h1>
-        <div className="mb-4">
-          <TagList tags={data.tags} />
-        </div>
         <p className="mb-6 text-lg text-gray-600 dark:text-gray-400">
           {data.description}
         </p>
         <div className="mb-6 flex items-center gap-4">
-          {data.writer && (
-            <div className="flex items-center gap-2">
-              {data.writer.image && (
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcSet={`${data.writer?.image?.url}?fm=webp&fit=crop&w=48&h=48 1x, ${data.writer?.image?.url}?fm=webp&fit=crop&w=48&h=48&dpr=2 2x`}
-                  />
-                  <img
-                    src={data.writer?.image?.url}
-                    alt=""
-                    className="h-12 w-12 rounded-full object-cover"
-                    width={data.writer?.image?.width}
-                    height={data.writer?.image?.height}
-                  />
-                </picture>
-              )}
-              <span className="text-sm font-medium text-gray-900 dark:text-white">
-                {data.writer?.name}
-              </span>
-            </div>
-          )}
           <PublishedDate date={data.publishedAt || data.createdAt} />
         </div>
         {data.thumbnail && (
@@ -76,7 +49,6 @@ export default async function Article({ contentId, queries }: Props) {
             __html: `${formatRichText(data.content)}`,
           }}
         />
-        <Profile writer={data.writer} />
       </article>
     </main>
   );
