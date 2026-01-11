@@ -71,7 +71,9 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.{js,jsx,mjs,ts,tsx,mts,cts}"],
+      "includes": [
+        "**/*.{js,jsx,mjs,ts,tsx,mts,cts}"
+      ],
       "javascript": {
         "globals": [
           "onanimationend",
@@ -240,13 +242,21 @@
       }
     },
     {
-      "includes": ["**/*.ts", "**/*.tsx"],
+      "includes": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
       "javascript": {
         "globals": []
       }
     },
     {
-      "includes": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
+      "includes": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.mts",
+        "**/*.cts"
+      ],
       "linter": {
         "rules": {
           "complexity": {
@@ -286,7 +296,26 @@
     "enabled": true,
     "actions": {
       "source": {
-        "organizeImports": "on"
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              {
+                "type": false,
+                "source": ":PACKAGE:"
+              },
+              ":BLANK_LINE:",
+              {
+                "type": false,
+                "source": ":PATH:"
+              },
+              ":BLANK_LINE:",
+              {
+                "type": true
+              }
+            ]
+          }
+        }
       }
     }
   },
