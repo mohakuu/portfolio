@@ -90,4 +90,3 @@ export const getPortfolioDetail = async (
   await new Promise((resolve) => setTimeout(resolve, 100));
   return mockPortfolios.find((portfolio) => portfolio.id === id) || null;
 };
-

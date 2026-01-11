@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import ArticleList from "@/features/blog/components/ArticleList";
 import HeroSection from "@/components/common/HeroSection";
 import PageContainer from "@/components/common/PageContainer";
 import SearchFieldWithSuspense from "@/components/common/SearchFieldWithSuspense";
+import ArticleList from "@/features/blog/components/ArticleList";
 import { LIMIT } from "@/libs/constants";
 
 type Props = {
@@ -41,4 +41,3 @@ export default async function Page(props: Props) {
     </PageContainer>
   );
 }
-

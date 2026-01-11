@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import ArticleList from "@/features/blog/components/ArticleList";
 import PageContainer from "@/components/common/PageContainer";
 import PageSection from "@/components/common/PageSection";
 import SearchFieldWithSuspense from "@/components/common/SearchFieldWithSuspense";
+import ArticleList from "@/features/blog/components/ArticleList";
 
 type Props = {
   searchParams: Promise<{
@@ -43,4 +43,3 @@ export default async function Page(props: Props) {
     </PageContainer>
   );
 }
-

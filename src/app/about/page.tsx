@@ -13,7 +13,6 @@ export default function AboutPage() {
       <HeroSection title="About" description="自己紹介" />
       <PageSection>
         <div className="space-y-12">
-
           <div className="space-y-8">
             {/* 基本情報 */}
             <div>
@@ -90,4 +89,3 @@ export default function AboutPage() {
     </PageContainer>
   );
 }
-

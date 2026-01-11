@@ -5,9 +5,6 @@ type Props = {
 
 export default function PageContainer({ children, className = "" }: Props) {
   return (
-    <div className={`bg-white dark:bg-gray-900 ${className}`}>
-      {children}
-    </div>
+    <div className={`bg-white dark:bg-gray-900 ${className}`}>{children}</div>
   );
 }
-

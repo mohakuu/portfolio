@@ -10,4 +10,3 @@ export type Portfolio = {
   createdAt: string;
   updatedAt: string;
 };
-

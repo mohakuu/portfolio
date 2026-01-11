@@ -13,7 +13,6 @@ export default function ContactPage() {
       <HeroSection title="Contact" description="お問い合わせ" />
       <PageSection>
         <div className="space-y-12">
-
           <div className="space-y-8">
             <div>
               <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
@@ -50,4 +49,3 @@ export default function ContactPage() {
     </PageContainer>
   );
 }
-
