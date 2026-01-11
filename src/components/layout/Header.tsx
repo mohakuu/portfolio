@@ -24,13 +24,13 @@ export default function Header() {
               About
             </Link>
             <Link
-              href="/portfolio"
+              href="/works"
               className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
             >
               Works
             </Link>
             <Link
-              href="/articles"
+              href="/blog"
               className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
             >
               Blog
@@ -78,14 +78,14 @@ export default function Header() {
                 About
               </Link>
               <Link
-                href="/portfolio"
+                href="/works"
                 className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Works
               </Link>
               <Link
-                href="/articles"
+                href="/blog"
                 className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                 onClick={() => setIsMenuOpen(false)}
               >

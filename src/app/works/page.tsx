@@ -5,7 +5,7 @@ export const metadata = {
   description: "これまでに制作したプロジェクトの一覧です。",
 };
 
-export default function PortfolioPage() {
+export default function WorksPage() {
   return (
     <div className="bg-white dark:bg-gray-900">
       {/* ヒーローセクション */}

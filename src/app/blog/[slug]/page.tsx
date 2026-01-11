@@ -27,7 +27,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       images: [data?.thumbnail?.url || ""],
     },
     alternates: {
-      canonical: `/articles/${params.slug}`,
+      canonical: `/blog/${params.slug}`,
     },
   };
 }
@@ -45,3 +45,4 @@ export default async function Page(props: Props) {
     />
   );
 }
+

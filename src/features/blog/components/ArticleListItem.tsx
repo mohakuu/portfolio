@@ -10,7 +10,7 @@ type Props = {
 export default function ArticleListItem({ article }: Props) {
   return (
     <li className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
-      <Link href={`/articles/${article.id}`} className="block">
+      <Link href={`/blog/${article.id}`} className="block">
         <div className="sm:flex">
           {article.thumbnail ? (
             <div className="relative h-48 w-full sm:h-auto sm:w-64 sm:shrink-0">

@@ -21,7 +21,7 @@ export default async function PortfolioPreview() {
             Works
           </h2>
           <Link
-            href="/portfolio"
+            href="/works"
             className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
           >
             {MESSAGES.VIEW_ALL}

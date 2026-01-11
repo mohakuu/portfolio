@@ -14,8 +14,6 @@ export const formatRichText = (richText: string) => {
       return hljs.highlight(text, {
         language: lang?.replace(/^language-/, "") || "",
       });
-
-      // TODO
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_error) {
       return hljs.highlightAuto(text);
